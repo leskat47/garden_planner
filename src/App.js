@@ -1,5 +1,8 @@
+import React from 'react';
 import './App.css';
-import PlantTable from './components/PlantTable';
+import Areas from './components/Areas';
+import { sampleData } from './sample_data';
+
 function App() {
   return (
     <div className="App">
@@ -8,7 +11,7 @@ function App() {
           Garden Planner
         </p>
       </header>
-      <PlantTable plants={[]} />
+      <Areas areas={sampleData.areas} />
     </div>
   );
 }
