@@ -2,13 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function PlantTable({plants}) {
-  console.log(plants);
   return (
     <table>
       <tbody>
         <tr>
-          <td>Table stub</td>
+          <th>Name</th>
         </tr>
+        { plants.map((plant, i) => (
+          <tr key={i}>
+            <td>{plant.name}</td>
+          </tr>
+          ))}
       </tbody>
     </table>
   );
