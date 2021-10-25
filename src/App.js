@@ -4,16 +4,16 @@ import { connect } from 'react-redux';
 
 import getAreas from './store/selectors/areas-selector';
 
-import './App.css';
+import './App.scss';
 import Areas from './components/Areas';
 
 function App({areas}) {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
+        <h1>
           Garden Planner
-        </p>
+        </h1>
       </header>
       <Areas areas={areas} />
     </div>
