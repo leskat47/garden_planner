@@ -1,9 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import getAreas from './store/selectors/areas-selector';
+
 import './App.css';
 import Areas from './components/Areas';
-import { sampleData } from './sample_data';
 
-function App() {
+function App({areas}) {
   return (
     <div className="App">
       <header className="App-header">
@@ -11,9 +15,19 @@ function App() {
           Garden Planner
         </p>
       </header>
-      <Areas areas={sampleData.areas} />
+      <Areas areas={areas} />
     </div>
   );
 }
 
-export default App;
+App.propTypes = {
+  areas: PropTypes.array
+}
+
+function mapStateToProps(state) {
+  return {
+    areas: getAreas(state)
+  }
+}
+
+export default connect(mapStateToProps)(App);
